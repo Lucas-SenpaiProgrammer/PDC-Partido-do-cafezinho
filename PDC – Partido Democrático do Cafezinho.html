@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PDC – Partido Democrático do Cafezinho</title>
+<style>
+:root{--bg:#f6efe4;--surface:#fffaf2;--text:#2a1a10;--muted:#6e5646;--brand:#4a2b17;--gold:#b87a2b;--line:#dccbb3;--cup:#fffaf2;--coffee:#5b3320;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a110b;--surface:#26180f;--text:#f5e9db;--muted:#c3a993;--brand:#e6b98a;--gold:#e0a04a;--line:#40291a;--cup:#f5e9db;--coffee:#8a5434;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a110b;--surface:#26180f;--text:#f5e9db;--muted:#c3a993;--brand:#e6b98a;--gold:#e0a04a;--line:#40291a;--cup:#f5e9db;--coffee:#8a5434;color-scheme:dark}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+svg{display:block}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);border-bottom:3px double var(--gold);z-index:5}
+nav{display:flex;justify-content:space-between;align-items:center;padding:10px 0;gap:12px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:8px;font-weight:bold;color:var(--brand);letter-spacing:.06em}
+.logo svg{width:34px;height:34px}
+nav a{color:var(--text);text-decoration:none;margin-left:16px;font:.85rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center;padding:56px 0 48px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.12;margin:0 0 10px;color:var(--brand)}
+.lema{font-style:italic;color:var(--gold);font-size:1.25rem;margin:0 0 14px}
+.hero p{color:var(--muted);margin:0 0 22px}
+.art-hero{width:100%;max-width:380px;margin:0 auto}
+@media(max-width:720px){.hero{grid-template-columns:1fr;text-align:center}}
+.btn{display:inline-block;background:var(--brand);color:var(--bg);border:0;padding:13px 28px;font:600 .9rem system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none}
+section{padding:44px 0}
+h2{color:var(--brand);font-size:1.7rem;margin:0 0 6px}
+.sub{color:var(--muted);margin:0 0 22px;font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);padding:18px}
+.card svg{width:56px;height:56px;margin-bottom:8px}
+.card h3{margin:0 0 6px;color:var(--brand);font-size:1.05rem}
+.card p{margin:0;color:var(--muted);font-size:.95rem}
+.hist{display:grid;grid-template-columns:1fr 240px;gap:28px;align-items:start}
+.hist p{margin:0 0 14px}
+@media(max-width:720px){.hist{grid-template-columns:1fr}}
+.frame{background:var(--surface);border:1px solid var(--line);padding:12px;text-align:center;font:.8rem system-ui,sans-serif;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;text-align:center;margin-top:20px}
+.stat{background:var(--surface);border:1px solid var(--line);padding:16px}
+.stat b{display:block;font-size:2rem;color:var(--gold)}
+.stat span{font:.8rem system-ui,sans-serif;color:var(--muted)}
+.art{background:var(--surface);border:1px solid var(--line);padding:6px 20px}
+.art p{margin:14px 0}
+form{display:grid;gap:14px;max-width:520px}
+label{font:600 .85rem system-ui,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+input,select{width:100%;padding:11px 12px;border:1px solid var(--line);background:var(--surface);color:var(--text);font:1rem system-ui,sans-serif}
+.chk{display:flex;gap:10px;align-items:flex-start;font:.9rem system-ui,sans-serif;text-transform:none;letter-spacing:0;font-weight:400}
+.chk input{width:auto;margin-top:4px}
+.doc{margin-top:26px;max-width:560px;background:var(--surface);border:2px solid var(--brand);padding:26px;position:relative}
+.doc::after{content:"SERVIDO";position:absolute;right:18px;bottom:16px;border:3px solid var(--gold);color:var(--gold);padding:2px 10px;font:bold 1rem system-ui,sans-serif;transform:rotate(-10deg);letter-spacing:.1em}
+.doc h3{margin:0 0 10px;color:var(--brand);text-transform:uppercase;font-size:1rem;letter-spacing:.08em}
+.doc p{margin:6px 0}
+.hidden{display:none}
+footer{border-top:3px double var(--gold);padding:24px 0;color:var(--muted);font:.85rem system-ui,sans-serif;text-align:center}
+.steam{animation:s 3s ease-in-out infinite}
+@keyframes s{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:.7;transform:translateY(-5px)}}
+@media(prefers-reduced-motion:reduce){.steam{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="cup" viewBox="0 0 120 100">
+<ellipse cx="55" cy="88" rx="46" ry="8" fill="var(--gold)" opacity=".5"/>
+<path d="M14 36h82v24c0 18-15 30-41 30S14 78 14 60z" fill="var(--cup)" stroke="var(--brand)" stroke-width="4"/>
+<path d="M96 44h8c8 0 8 22-6 22h-5" fill="none" stroke="var(--brand)" stroke-width="5" stroke-linecap="round"/>
+<ellipse cx="55" cy="36" rx="41" ry="7" fill="var(--coffee)" stroke="var(--brand)" stroke-width="3"/>
+<g class="steam" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"><path d="M38 24c-8-8 8-12 0-20"/><path d="M56 24c-8-8 8-12 0-20"/><path d="M74 24c-8-8 8-12 0-20"/></g>
+</symbol>
+<symbol id="bean" viewBox="0 0 60 60">
+<ellipse cx="30" cy="30" rx="18" ry="25" transform="rotate(35 30 30)" fill="var(--coffee)" stroke="var(--brand)" stroke-width="3"/>
+<path d="M18 14c10 12-8 20 6 34" transform="rotate(35 30 30) translate(4 -2)" fill="none" stroke="var(--cup)" stroke-width="3" stroke-linecap="round"/>
+</symbol>
+<symbol id="thermos" viewBox="0 0 60 80">
+<rect x="14" y="14" width="32" height="60" rx="6" fill="var(--cup)" stroke="var(--brand)" stroke-width="4"/>
+<rect x="18" y="2" width="24" height="14" rx="4" fill="var(--gold)" stroke="var(--brand)" stroke-width="3"/>
+<rect x="14" y="34" width="32" height="12" fill="var(--coffee)"/>
+</symbol>
+<symbol id="bread" viewBox="0 0 80 60">
+<circle cx="24" cy="34" r="18" fill="var(--gold)" stroke="var(--brand)" stroke-width="3"/>
+<circle cx="52" cy="30" r="18" fill="var(--gold)" stroke="var(--brand)" stroke-width="3"/>
+<circle cx="38" cy="22" r="16" fill="var(--gold)" stroke="var(--brand)" stroke-width="3"/>
+</symbol>
+<symbol id="zzz" viewBox="0 0 80 60">
+<circle cx="34" cy="36" r="22" fill="var(--cup)" stroke="var(--brand)" stroke-width="3"/>
+<path d="M24 36q5 5 10 0M38 36q5 5 10 0" fill="none" stroke="var(--brand)" stroke-width="3" stroke-linecap="round"/>
+<text x="56" y="18" font-size="16" fill="var(--gold)" font-family="Georgia" font-weight="bold">Z z</text>
+</symbol>
+<symbol id="leaf" viewBox="0 0 60 60">
+<path d="M10 50C8 20 30 8 52 10 54 34 40 52 10 50z" fill="var(--gold)" stroke="var(--brand)" stroke-width="3"/>
+<path d="M10 50C22 36 32 26 44 18" fill="none" stroke="var(--brand)" stroke-width="3"/>
+</symbol>
+<symbol id="bus" viewBox="0 0 80 60">
+<rect x="6" y="10" width="68" height="36" rx="8" fill="var(--cup)" stroke="var(--brand)" stroke-width="3"/>
+<rect x="12" y="16" width="16" height="14" fill="var(--coffee)"/><rect x="32" y="16" width="16" height="14" fill="var(--coffee)"/><rect x="52" y="16" width="16" height="14" fill="var(--coffee)"/>
+<circle cx="22" cy="48" r="7" fill="var(--brand)"/><circle cx="58" cy="48" r="7" fill="var(--brand)"/>
+</symbol>
+<symbol id="book" viewBox="0 0 80 60">
+<path d="M8 12h28v38H8zM44 12h28v38H44z" fill="var(--cup)" stroke="var(--brand)" stroke-width="3"/>
+<path d="M14 22h16M14 30h16M50 22h16M50 30h16" stroke="var(--gold)" stroke-width="3"/>
+</symbol>
+</defs>
+</svg>
+
+<header><div class="wrap"><nav>
+<span class="logo"><svg><use href="#cup"/></svg>PDC</span>
+<div><a href="#historia">História</a><a href="#plataforma">Plataforma</a><a href="#estatuto">Estatuto</a><a href="#filiacao">Filiação</a></div>
+</nav></div></header>
+
+<main class="wrap">
+<div class="hero">
+<div>
+<h1>Partido Democrático do Cafezinho</h1>
+<p class="lema">“Do grão à democracia.”</p>
+<p>Desde 1987, trabalhamos com seriedade, método e uma garrafa térmica para que toda decisão nacional seja tomada com a temperatura adequada.</p>
+<a class="btn" href="#filiacao">Requerer filiação</a>
+</div>
+<svg class="art-hero" viewBox="0 0 120 100" role="img" aria-label="Xícara de café fumegante"><use href="#cup"/></svg>
+</div>
+
+<section id="historia">
+<h2>Origem institucional</h2>
+<p class="sub">Fundado em Vila Pão de Queijo, no país fictício de Nova Lusitânia.</p>
+<div class="hist">
+<div>
+<p>Em 12 de março de 1987, a Assembleia Constituinte Imaginária foi suspensa às 15h14 porque o café acabou durante a leitura do artigo 3º. O deputado Heitor Valadares Neto subiu à tribuna e declarou: “Sem café não há quórum, e sem quórum não há república.”</p>
+<p>No dia seguinte, 214 parlamentares assinaram a ata de fundação do PDC, redigida no verso de um guardanapo hoje preservado em vitrine climatizada, ao lado da colher original.</p>
+<p>O Partido jamais perdeu uma votação em que o café estivesse quente.</p>
+</div>
+<div class="frame"><svg viewBox="0 0 60 80" style="width:110px;margin:0 auto 8px"><use href="#thermos"/></svg>Garrafa térmica fundadora, exposta na sede nacional.</div>
+</div>
+<div class="stats">
+<div class="stat"><b>37</b><span>anos de mandato aromático</span></div>
+<div class="stat"><b>214</b><span>fundadores</span></div>
+<div class="stat"><b>1</b><span>colher oficial</span></div>
+<div class="stat"><b>0</b><span>cafés frios tolerados</span></div>
+</div>
+</section>
+
+<section id="plataforma">
+<h2>Plataforma programática</h2>
+<p class="sub">Aprovada em plenário, depois de intervalo para o café.</p>
+<div class="grid">
+<div class="card"><svg viewBox="0 0 60 80"><use href="#thermos"/></svg><h3>Café em toda repartição</h3><p>Garrafa térmica obrigatória em filas, balcões e salas de espera.</p></div>
+<div class="card"><svg viewBox="0 0 80 60"><use href="#bread"/></svg><h3>Pão de queijo nacional</h3><p>Direito constitucional ao acompanhamento adequado do cafezinho.</p></div>
+<div class="card"><svg viewBox="0 0 80 60"><use href="#zzz"/></svg><h3>Soneca cívica</h3><p>Vinte minutos de descanso pós-almoço, com proteção legal.</p></div>
+<div class="card"><svg viewBox="0 0 60 60"><use href="#leaf"/></svg><h3>Agricultura cafeeira</h3><p>Apoio ao pequeno produtor e ao grande apreciador.</p></div>
+<div class="card"><svg viewBox="0 0 80 60"><use href="#bus"/></svg><h3>Transporte pontual</h3><p>Ônibus no horário, ou ao menos com café a bordo durante o atraso.</p></div>
+<div class="card"><svg viewBox="0 0 80 60"><use href="#book"/></svg><h3>Educação</h3><p>Cada escola terá uma biblioteca e, ao lado, uma cafeteira.</p></div>
+</div>
+</section>
+
+<section id="estatuto">
+<h2>Estatuto (trechos)</h2>
+<p class="sub">Leitura obrigatória; compreensão, facultativa.</p>
+<div class="art">
+<p><b>Art. 1º</b> – O Partido é uma associação de cidadãos unidos por uma causa maior: a próxima xícara.</p>
+<p><b>Art. 7º</b> – É vedado ao filiado dizer “só mais um” sem de fato tomar só mais um.</p>
+<p><b>Art. 12</b> – As decisões do Diretório serão tomadas por consenso ou, na impossibilidade, por cafeína.</p>
+<p><b>Art. 19, parágrafo único</b> – O açúcar é de livre escolha; o adoçante será tolerado com respeito.</p>
+</div>
+</section>
+
+<section id="filiacao">
+<h2>Requerimento de filiação</h2>
+<p class="sub">Análise em até 30 dias úteis, ou até esfriar, o que ocorrer primeiro.</p>
+<form id="f">
+<div><label for="n">Nome completo</label><input id="n" required maxlength="60"></div>
+<div><label for="p">Café de preferência</label>
+<select id="p"><option>Coado</option><option>Expresso</option><option>Com leite</option><option>Gelado</option><option>Descafeinado (sob observação)</option></select></div>
+<div><label for="m">Cargo pretendido</label>
+<select id="m"><option>Militante de Garrafa Térmica</option><option>Secretário(a) do Pão de Queijo</option><option>Tesoureiro(a) do Açúcar</option><option>Presidente da Soneca</option></select></div>
+<label class="chk"><input type="checkbox" required> Declaro ciência de que o café será servido, mas a pauta não necessariamente andará.</label>
+<button class="btn" type="submit">Protocolar requerimento</button>
+</form>
+<div id="doc" class="doc hidden">
+<h3>Certidão de filiação</h3>
+<p>Certificamos que <b id="dn"></b> teve seu requerimento acolhido pelo Diretório Nacional.</p>
+<p>Café de preferência: <b id="dp"></b></p>
+<p>Cargo: <b id="dm"></b></p>
+<p>Protocolo nº <b id="dnum"></b></p>
+<p><small>Emitido em <span id="dd"></span>. Válido enquanto quente.</small></p>
+</div>
+</section>
+</main>
+
+<footer>Projeto totalmente fictício e humorístico. Qualquer semelhança com partidos, pessoas ou reuniões reais é mera coincidência. Nenhum dado sai do seu navegador.</footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var num='PDC-'+(1987000+Math.floor(Math.random()*9000))+'/'+(new Date().getFullYear());
+  document.getElementById('dn').textContent=document.getElementById('n').value.trim();
+  document.getElementById('dp').textContent=document.getElementById('p').value;
+  document.getElementById('dm').textContent=document.getElementById('m').value;
+  document.getElementById('dnum').textContent=num;
+  document.getElementById('dd').textContent=new Date().toLocaleDateString('pt-BR');
+  var el=document.getElementById('doc');
+  el.classList.remove('hidden');
+  el.scrollIntoView({behavior:'smooth',block:'center'});
+  try{localStorage.setItem('pdc-member',JSON.stringify({num:num}));}catch(err){}
+});
+</script>
+</body>
+</html>
