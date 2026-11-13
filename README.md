@@ -57,4 +57,4 @@ Este é um projeto de humor. Qualquer semelhança com partidos, pessoas ou reuni
 
 ## Autor
 
-**Lucas André Oliveira da Silva Braga**, desenvolvedor front-end.
+**Lucas**, desenvolvedor front-end.
