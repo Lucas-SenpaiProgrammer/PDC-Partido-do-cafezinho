@@ -4,7 +4,7 @@ Site humorístico e **totalmente fictício** de um partido político dedicado ao
 
 > “Do grão à democracia.”
 
-🔗 **Demo:** _adicione aqui o link do GitHub Pages_
+🔗 https://lucas-senpaiprogrammer.github.io/PDC-Partido-do-cafezinho/
 
 ![Captura de tela do site](screenshot.png)
 
